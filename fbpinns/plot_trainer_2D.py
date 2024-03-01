@@ -40,7 +40,7 @@ def plot_2D_FBPINN(x_batch_test, u_exact, u_test, us_test, ws_test, us_raw_test,
     # plot full solutions
     plt.subplot(3,2,2)
     plt.title(f"[{i}] Difference")
-    _plot_test_im(u_exact - u_test, xlim0, ulim, n_test)
+    _plot_test_im(u_exact.T - u_test, xlim0, ulim, n_test)
 
     plt.subplot(3,2,3)
     plt.title(f"[{i}] Full solution")
@@ -48,7 +48,7 @@ def plot_2D_FBPINN(x_batch_test, u_exact, u_test, us_test, ws_test, us_raw_test,
 
     plt.subplot(3,2,4)
     plt.title(f"[{i}] Ground truth")
-    _plot_test_im(u_exact, xlim0, ulim, n_test)
+    _plot_test_im(u_exact.T, xlim0, ulim, n_test)
 
     # plot raw hist
     plt.subplot(3,2,5)
@@ -80,7 +80,7 @@ def plot_2D_PINN(x_batch_test, u_exact, u_test, u_raw_test, x_batch, all_params,
     # plot full solution
     plt.subplot(3,2,2)
     plt.title(f"[{i}] Difference")
-    _plot_test_im(u_exact - u_test, xlim0, ulim, n_test)
+    _plot_test_im(u_exact.T - u_test, xlim0, ulim, n_test)
 
     plt.subplot(3,2,3)
     plt.title(f"[{i}] Full solution")
@@ -88,7 +88,7 @@ def plot_2D_PINN(x_batch_test, u_exact, u_test, u_raw_test, x_batch, all_params,
 
     plt.subplot(3,2,4)
     plt.title(f"[{i}] Ground truth")
-    _plot_test_im(u_exact, xlim0, ulim, n_test)
+    _plot_test_im(u_exact.T, xlim0, ulim, n_test)
 
     # plot raw hist
     plt.subplot(3,2,5)
